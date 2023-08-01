@@ -1,0 +1,2 @@
+insert键编辑文本.update count = 1.
+vi保存退出：按ESC键，输入":wq"即可保存退出.
