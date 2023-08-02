@@ -53,6 +53,47 @@ git init
 ```
 git add (workpalce -> index)
 git commit(index -> repository)
+touch 文件名.后缀//创建文件
+rm -rf 文件名//删除文件
 ```
 
 ![image-20230801171541018](C:\Users\DeanNoteBook\AppData\Roaming\Typora\typora-user-images\image-20230801171541018.png)
+
+### git status
+
+- 作用：查看修改的状态(暂存区、工作区)
+- 命令实行：git status
+
+### git add
+
+- 作用：添加工作区一个或多个文件的修改到暂存区
+- 命令实行：git add 单个文件名/通配符
+  - 将所有修改加入暂存区：git add .
+
+### git commit
+
+- 作用：提交暂存区内容到本地仓库的当前分支
+- 命令实行：git commit-m "注释内容"
+
+### git log
+
+- 作用：查看提交记录
+- 命令实行：git log [option]
+  - option
+    - --all 显示所有分支
+    - --pretty=oneline 将提交信息显示为一行
+    - --abbrev-commit 使得输出的commitld更简短
+    - --graph 以图形方式显示
+
+### git reset
+
+- 作用：版本切换
+- 命令实行：git reset --hard commitID
+  - commitID可以使用git log 和git-log查看
+
+- 查看已经删除的日志记录
+  - git reflog 这个指令可以看到已经删除的提交记录
+
+## 添加文件至忽略列表
+
+一般我们总会有些文件无需纳入Gt的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。在这种情况下，我们可以在工作目录中创建一个名为gitignore的文件（文件名称固定），列出要忽略的文件模式。
