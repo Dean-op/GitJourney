@@ -55,6 +55,7 @@ git add (workpalce -> index)
 git commit(index -> repository)
 touch 文件名.后缀//创建文件
 rm -rf 文件名//删除文件
+git rm file1 file2 file3 ...//一次性删除多个文件
 ```
 
 ![image-20230801171541018](C:\Users\DeanNoteBook\AppData\Roaming\Typora\typora-user-images\image-20230801171541018.png)
@@ -116,7 +117,7 @@ Git 中的分支有以下几个重要特点：
 
 Git 的主要分支是 `master`（在最近的 Git 版本中改为 `main` 或其他名称）。除此之外，开发者可以根据需要创建其他自定义分支，通常用于开发新功能或修复问题。创建分支时，它会继承父分支的代码状态，然后在其基础上进行开发。
 
-常用的 Git 命令来操作分支包括：
+## **常用的 Git 命令**
 
 - `git branch`：列出所有分支，以及当前所在分支。
 - `git branch <branch_name>`：创建一个名为 `<branch_name>` 的新分支。
@@ -124,5 +125,20 @@ Git 的主要分支是 `master`（在最近的 Git 版本中改为 `main` 或其
   - git checkout -b <branch_name>:切换分支，如果该分支不存在则创建一个名为branch_name的分支
 - `git merge <branch_name>`：将名为 `<branch_name>` 的分支合并到当前分支。
 - `git branch -d <branch_name>`：删除名为 `<branch_name>` 的分支（注意：只能删除已合并的分支）。
+  - `git branch -D <branch_name>`：强制删除,不做任何检查
 
 分支是 Git 中非常有用且强大的概念，它使得团队成员可以并行开发不同的功能，然后将它们集成到主代码库中，确保代码的稳定性和可维护性。
+
+## 分支使用原则
+
+几乎所有的版本控制系统都以某种形式支持分支。使用分支意味着你可以把你的工作从开发主线上分离开来进行重大的Bug修改、开发新的功能,以免影响开发主线。在开发中，一般有如下分支使用原则与流程：
+
+- master （生产）分支线上分支，主分支，中小规模项目作为线上运行的应用对应的分支；develop （开发）分支是从master创建的分支，一般作为开发部门的主要开发分支，如果没有其他并行开发不同期上线要求，都可以在此版本进行开发,阶段开发完成后,需要是合并到master分支,准备上线。
+
+- feature/xxxx分支从develop创建的分支,一般是同期并行开发,但不同期上线时创建的分支,分支上的研发任务完成后合并到develop分支。
+
+- hotfix/xxxx分支，从master派生的分支，一般作为线上bug修复使用，修复完成后需要合并到master、test、develop分支。
+
+- 还有一些其他分支，在此不再详述，例如test分支（用于代码测试）、pre分支（预上线分支）等等。
+
+![image-20230802200714472](C:\Users\DeanNoteBook\AppData\Roaming\Typora\typora-user-images\image-20230802200714472.png)

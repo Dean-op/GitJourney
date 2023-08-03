@@ -1,3 +1,4 @@
+this is a test file.
 insert键编辑文本.update count = 1.
 vi保存退出：按ESC键，输入":wq"即可保存退出.
 git中的复制粘贴操作：选中既是复制，shift+insert是粘贴
