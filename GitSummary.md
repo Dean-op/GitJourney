@@ -254,7 +254,7 @@ GitHub 仓库有以下特点：
     在当前提交上创建一个新的标签。
 
 11. **查看提交历史记录：**
-    
+  
     ```bash
     git log
     ```
@@ -270,6 +270,7 @@ git remote add Name originalLink  #将originalLink命名为Name
 git push Name branch_name  #将本地库推送至远程库
 git pull Name branch_name  #将远程库拉取到本地库
 git clone <repository_url> #将远程库克隆到本地库
+git remote remove <别名>#删除多余的Git 远程仓库别名
 #clone会做以下操作：1.拉取代码。2.初始化本地库。3.创建别名（默认为origin）
 ```
 
